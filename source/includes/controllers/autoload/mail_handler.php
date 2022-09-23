@@ -249,7 +249,7 @@
 		else $root = trim((@$tl->page['protocol'] ? $tl->page['protocol'] : 'http://') . $tl->settings['Root URL'], ' /');
 
 		$fileManager = new file_manager_TL();
-		$html = $file_manager->readTextFile(__DIR__ . '../../../views/shared/email.html');
+		$html = $file_manager->readTextFile(SITE_ROOT_DIR . 'views/shared/email.html');
 
 		$html = str_replace('{URL}', $root, $html);
 		$html = str_replace('{LOGO}', $root . '/' . (@$tl->page['domain_alias']['destination_url'] ? $tl->page['domain_alias']['destination_url'] : 'resources/img/logo.png'), $html);

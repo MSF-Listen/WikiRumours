@@ -65,7 +65,7 @@
 	}
 
 	function display_pending_migrations($latest_number) {
-		$migrations_dir = __DIR__ . '/../../../../../db_migrations/';
+		$migrations_dir = SITE_ROOT_DIR . 'db_migrations/';
 
 		echo ' looking in: ' . $migrations_dir;
 

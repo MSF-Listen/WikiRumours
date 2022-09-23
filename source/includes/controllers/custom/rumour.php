@@ -618,13 +618,9 @@
 
 			// First upload to `trash`, move any actually desired ones into the correct place on save:
 			$this->temporary_upload_files_dir = 'trash/';
-			// This stupid ../../.. thing needed because it's hard coded into the file upload widget code...
-			$this->temporary_upload_files_abspath = realpath(__DIR__ . '/../../../../' . $this->temporary_upload_files_dir);
+			$this->temporary_upload_files_abspath = realpath(SITE_ROOT_DIR . $this->temporary_upload_files_dir);
 
-			// TODO - make $FILE_UPLOAD_PATH a global
-			/* $FILE_UPLOAD_PATH = __DIR__ . '/../../../uploads'; */
-			$FILE_UPLOAD_PATH = '/srv/web_root/uploads';
-			$this->upload_files_dir = $FILE_UPLOAD_PATH . '/rumour_response_attachments/' . $this->rumour['public_id'] . '/';
+			$this->upload_files_dir = UPLOADS_ROOT . 'rumour_response_attachments/' . $this->rumour['public_id'] . '/';
 
 		}
 

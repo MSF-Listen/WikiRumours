@@ -12,7 +12,7 @@
 
 			$directory_manager = new directory_manager_TL();
 
-			$downloadPath = __DIR__ . '/../../../../downloads';
+			$downloadPath = SITE_ROOT_DIR . 'downloads';
 
 			// check for errors
 				if (!file_exists($downloadPath)) {

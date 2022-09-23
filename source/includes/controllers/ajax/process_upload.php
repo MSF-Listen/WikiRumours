@@ -15,9 +15,13 @@
 			exit('No destination path provided.');
 		}
 
-		if (!file_exists(__DIR__ . '/../../../source/' . $destinationPath)) {
-			mkdir(__DIR__ . '/../../../source/' . $destinationPath);
-			if (!file_exists(__DIR__ . '/../../../source/' . $destinationPath)) {
+		// TODO - check that destinationPath is actually a place we allow?
+		// TODO - check destinationPath doesn't include ../ or similar escaping things?
+
+		
+		if (!file_exists(SITE_ROOT_DIR . $destinationPath)) {
+			mkdir(SITE_ROOT_DIR . $destinationPath);
+			if (!file_exists(SITE_ROOT_DIR . $destinationPath)) {
 				header('HTTP/1.1 404 Not Found');
 				header('Content-type: text/plain');
 				exit('Unable to locate destination path (' . $destinationPath . ').');
