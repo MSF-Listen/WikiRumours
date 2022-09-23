@@ -75,5 +75,9 @@ $tl->frontEndLibraries = [
     'Google Charts (AJAX)' => array(
         'remote_js_path' => 'https://www.google.com/jsapi',
     ),
+	'Tiny MCE' => array(
+		'version' => '6.1.2',
+		'local_js_path' => 'tinymce/tinymce.min.js',
+	),
 
 ];
