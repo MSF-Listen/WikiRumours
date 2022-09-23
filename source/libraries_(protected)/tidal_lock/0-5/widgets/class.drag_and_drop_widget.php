@@ -105,7 +105,7 @@
 				}
 				else $params['destination_path'] = trim($params['destination_path'], '/');
 
-				if (!file_exists(__DIR__ . '/../../../../' . $params['destination_path'])) {
+				if (!file_exists(SITE_ROOT_DIR . $params['destination_path'])) {
 					header('HTTP/1.1 404 Not Found');
 					header('Content-type: text/plain');
 					exit('Unable to locate destination path (' . $params['destination_path'] . ').');
@@ -126,8 +126,8 @@
 				}
 
 			// move file
-				$success = move_uploaded_file($_FILES['file']['tmp_name'], __DIR__ . '/../../../../' . $params['destination_path'] . '/' . $_FILES['file']['name']);
-				if (!$success || !file_exists(__DIR__ . '/../../../../' . $params['destination_path'] . '/' . $_FILES['file']['name'])) {
+				$success = move_uploaded_file($_FILES['file']['tmp_name'], SITE_ROOT_DIR . $params['destination_path'] . '/' . $_FILES['file']['name']);
+				if (!$success || !file_exists(SITE_ROOT_DIR . $params['destination_path'] . '/' . $_FILES['file']['name'])) {
 					header('HTTP/1.1 500 Internal Server Error');
 					header('Content-type: text/plain');
 					exit('Unable to save uploaded file to the server.');		
