@@ -50,5 +50,10 @@ services:
       - ENC_PASSWORD=test
       - ENC_PUBKEY=test
     volumes:
-      - ./source/:/srv/
-      - ./local_docker_development/htpasswd:/home/site/wwwroot/.htpasswd
+      # source is read-only:
+      - ./source/:/srv/:ro
+      - ./local_docker_development/htpasswd:/home/site/wwwroot/.htpasswd:ro
+      # Uploads / etc should all be read-write
+      - ./local_docker_development/uploads/:/srv/uploads/:rw
+      - ./local_docker_development/trash:/srv/trash/:rw
+      - ./local_docker_development/backups:/srv/backups/:rw
