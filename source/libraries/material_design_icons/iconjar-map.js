@@ -68,7 +68,7 @@
 
 
   <body class="logged_in  env-production windows vis-public page-blob">
-    <a href="source/libraries/material_design_icons/iconjar-map#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <a href="/libraries/material_design_icons/iconjar-map#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
     <div class="wrapper">
       
       

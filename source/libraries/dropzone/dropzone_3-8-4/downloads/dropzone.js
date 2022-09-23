@@ -1911,9 +1911,9 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
 require.alias("component-emitter/index.js", "dropzone/deps/emitter/index.js");
 require.alias("component-emitter/index.js", "emitter/index.js");
 if (typeof exports == "object") {
-  module.exports = require("source/libraries/dropzone/dropzone_3-8-4/downloads/dropzone");
+  module.exports = require("dropzone");
 } else if (typeof define == "function" && define.amd) {
-  define(function(){ return require("source/libraries/dropzone/dropzone_3-8-4/downloads/dropzone"); });
+  define(function(){ return require("dropzone"); });
 } else {
-  this["Dropzone"] = require("source/libraries/dropzone/dropzone_3-8-4/downloads/dropzone");
+  this["Dropzone"] = require("dropzone");
 }})();
