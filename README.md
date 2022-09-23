@@ -77,11 +77,18 @@ full instance of WikiRumours.
   - SMTP_USERNAME authentication username,
   - SMTP_PASSWORD authentication password,
   - SMTP_SENDER_EMAIL sender's email address
+  - SITE_ROOT_DIR where the code is hosted in the file system (the web root)
+
+- If you're using a container system (e.g. Docker), you'll need to mount the following read-write
+  volumes:
+  - `$SITE_ROOT_DIR/uploads/`
+  - `$SITE_ROOT_DIR/trash/`
+  - `$SITE_ROOT_DIR/backups/`
 
 - Copy the files over to your web server and point the root of
-  your virtual domain at the folder source/web_root.
+  your virtual domain at the folder `source`.
   
-- Make sure the .htaccess file sits in source/web_root (a backup
+- Make sure the .htaccess file sits in source/ (a backup
   of the file has been provided with a TXT extension since
   Windows sometimes hides files with solely a file extension)
   
